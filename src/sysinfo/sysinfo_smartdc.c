@@ -21,8 +21,8 @@ void sysinfo_smartdc(nvlist_t *root_nvl) {
 	/* sdc setup completion status */
 	setup_nvl = read_json_file("/var/lib/setup.json");
 	if (setup_nvl != NULL) {
-		if (nvlist_lookup_boolean_value(setup_nvl, "setup", &smartdc_setup) != 0)
-			warnx("can't find .setup in /var/lib/setup.json");
+		if (nvlist_lookup_boolean_value(setup_nvl, "complete", &smartdc_setup) != 0)
+			warnx("can't find .complete in /var/lib/setup.json");
 		nvlist_free(setup_nvl);
 	}
 
