@@ -180,7 +180,6 @@ sysinfo_zfs(nvlist_t *root_nvl)
 	 */
 	nvlist_add_string(root_nvl, "Zpool Profile", get_zpool_profile(nvroot));
 
-done:
 	zpool_close(zp);
 	zfs_close(zds);
 	libzfs_fini(zh);
